@@ -4,8 +4,8 @@ const validateQuery = (req, res, next) => {
     let validated = true
     
     if(observation != undefined) {
-        var arr = JSON.parse(observation);
         
+        let arr = observation
         for(let x = 0; x < arr.length; x++) {
             let value = arr[x]
             if(value != "wind" && value != "temperature" && value != "humidity") {
@@ -17,7 +17,6 @@ const validateQuery = (req, res, next) => {
             }
         }
         
-
     }
     
     if(validated) {    
